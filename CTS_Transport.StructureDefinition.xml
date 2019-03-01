@@ -47,7 +47,7 @@
     <element id="CTS_Transport.operations">
       <path value="CTS_Transport.operations" />
       <min value="1" />
-      <max value="1" />
+      <max value="*" />
       <type>
         <code value="BackboneElement" />
       </type>
