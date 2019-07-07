@@ -60,7 +60,7 @@
     </element>
     <element id="CTS_Transport.operations.oldstatus">
       <path value="CTS_Transport.operations.oldstatus" />
-      <definition value="Workflow status before the operation was executed. May be used for plausibility checking of the workflow status." />
+      <definition value="Workflow status before the operation was executed. May be used for plausibility checking of the (new) workflow status." />
       <min value="0" />
       <max value="1" />
       <type>
@@ -70,7 +70,7 @@
     </element>
     <element id="CTS_Transport.operations.newstatus">
       <path value="CTS_Transport.operations.newstatus" />
-      <definition value="New workflow status after the operation has been applied." />
+      <definition value="Updated workflow status of the trial form." />
       <min value="0" />
       <max value="1" />
       <type>
@@ -119,7 +119,7 @@
     </element>
     <element id="CTS_Transport.operations.update.queries">
       <path value="CTS_Transport.operations.update.queries" />
-      <definition value="Indication if certain queries are open with regard to a certain element which was changed in the described trial form." />
+      <definition value="Indication if certain (medical) queries are open with regard to a certain element which was changed in the described trial form." />
       <min value="0" />
       <max value="1" />
       <type>
@@ -129,7 +129,7 @@
     </element>
     <element id="CTS_Transport.operations.data">
       <path value="CTS_Transport.operations.data" />
-      <definition value="Structured data of all fields that were changed during the described operation." />
+      <definition value="Structured data of all fields that were changed during the executed operation." />
       <min value="0" />
       <max value="*" />
       <type>
@@ -168,7 +168,7 @@
     </element>
     <element id="CTS_Transport.operations.data.values">
       <path value="CTS_Transport.operations.data.values" />
-      <definition value="Metadata and the actual values of the CRF items that were changed during the described operation." />
+      <definition value="Metadata and the actual values of the CRF item that was changed during the described operation." />
       <min value="1" />
       <max value="1" />
       <type>
@@ -187,7 +187,7 @@
     </element>
     <element id="CTS_Transport.operations.data.values.unit">
       <path value="CTS_Transport.operations.data.values.unit" />
-      <definition value="Unit of numerical values." />
+      <definition value="Unit if value is a numerical value." />
       <min value="0" />
       <max value="1" />
       <type>
