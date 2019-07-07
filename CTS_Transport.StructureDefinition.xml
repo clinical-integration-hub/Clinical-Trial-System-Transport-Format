@@ -168,6 +168,42 @@
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
       </type>
     </element>
+    <element id="CTS_Transport.operations.data.values.unit">
+      <path value="CTS_Transport.operations.data.values.unit" />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="CTS_Transport.operations.data.values.isother">
+      <path value="CTS_Transport.operations.data.values.isother" />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="boolean" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/boolean" />
+      </type>
+    </element>
+    <element id="CTS_Transport.operations.data.values.predef">
+      <path value="CTS_Transport.operations.data.values.predef" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="CTS_Transport.operations.data.values.overrule">
+      <path value="CTS_Transport.operations.data.values.overrule" />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
     <element id="CTS_Transport.operations.operationId">
       <path value="CTS_Transport.operations.operationId" />
       <min value="1" />
