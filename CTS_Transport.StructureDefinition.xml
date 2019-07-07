@@ -13,6 +13,7 @@
   <snapshot>
     <element id="CTS_Transport">
       <path value="CTS_Transport" />
+      <definition value="CTS_Transport (root element)" />
       <min value="0" />
       <max value="*" />
       <type>
