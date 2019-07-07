@@ -258,7 +258,7 @@
     </element>
     <element id="CTS_Transport.operations.timestamp">
       <path value="CTS_Transport.operations.timestamp" />
-      <definition value="Timestamp indicating when the trial form was saved the last time." />
+      <definition value="Timestamp indicating when the operation was executed by the user within a trial form." />
       <min value="1" />
       <max value="1" />
       <type>
