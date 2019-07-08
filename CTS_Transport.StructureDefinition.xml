@@ -90,7 +90,7 @@
     </element>
     <element id="CTS_Transport.operations.update.receiptdate">
       <path value="CTS_Transport.operations.update.receiptdate" />
-      <definition value="Timestamp indicating the date of a workflow status change" />
+      <definition value="Timestamp of workflow change &quot;not in house&quot; -&gt; &quot;in house&quot;" />
       <min value="0" />
       <max value="1" />
       <type>
@@ -120,7 +120,7 @@
     </element>
     <element id="CTS_Transport.operations.update.queries">
       <path value="CTS_Transport.operations.update.queries" />
-      <definition value="Indication if certain (medical) queries are open with regard to a certain element which was changed in the described trial form." />
+      <definition value="Indication if certain (medical) queries are open with regard to a items defined on the current trial form." />
       <min value="0" />
       <max value="1" />
       <type>
