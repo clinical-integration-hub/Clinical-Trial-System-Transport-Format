@@ -16,6 +16,11 @@
       <definition value="CTS_Transport (root element)" />
       <min value="0" />
       <max value="*" />
+      <base>
+        <path value="CTS_Transport" />
+        <min value="0" />
+        <max value="*" />
+      </base>
       <type>
         <code value="Element" />
       </type>
@@ -25,6 +30,11 @@
       <definition value="Version of the CTS_Transport format." />
       <min value="1" />
       <max value="1" />
+      <base>
+        <path value="CTS_Transport.version" />
+        <min value="1" />
+        <max value="1" />
+      </base>
       <type>
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
@@ -35,6 +45,11 @@
       <definition value="ID of the patient for which a certain trial form was entered into the CTS." />
       <min value="1" />
       <max value="1" />
+      <base>
+        <path value="CTS_Transport.patid" />
+        <min value="1" />
+        <max value="1" />
+      </base>
       <type>
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
@@ -45,6 +60,11 @@
       <definition value="URI identifing the source system. Freely definable in config.php, see &quot;APP_PUBLICURL&quot;" />
       <min value="1" />
       <max value="1" />
+      <base>
+        <path value="CTS_Transport.sourcesystem" />
+        <min value="1" />
+        <max value="1" />
+      </base>
       <type>
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
@@ -55,6 +75,11 @@
       <definition value="All information regarding a single change (&quot;operation&quot;) that was executed by a user of the CTS within a single trial form." />
       <min value="1" />
       <max value="*" />
+      <base>
+        <path value="CTS_Transport.operations" />
+        <min value="1" />
+        <max value="*" />
+      </base>
       <type>
         <code value="BackboneElement" />
       </type>
@@ -64,6 +89,11 @@
       <definition value="Workflow status before the operation was executed. May be used for plausibility checking of the (new) workflow status." />
       <min value="0" />
       <max value="1" />
+      <base>
+        <path value="CTS_Transport.operations.oldstatus" />
+        <min value="0" />
+        <max value="1" />
+      </base>
       <type>
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
@@ -74,6 +104,11 @@
       <definition value="Updated workflow status of the trial form." />
       <min value="0" />
       <max value="1" />
+      <base>
+        <path value="CTS_Transport.operations.newstatus" />
+        <min value="0" />
+        <max value="1" />
+      </base>
       <type>
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
@@ -84,6 +119,11 @@
       <definition value="Metadata concerning the executed operation (&quot;statechange&quot;)" />
       <min value="0" />
       <max value="1" />
+      <base>
+        <path value="CTS_Transport.operations.update" />
+        <min value="0" />
+        <max value="1" />
+      </base>
       <type>
         <code value="BackboneElement" />
       </type>
@@ -93,6 +133,11 @@
       <definition value="Timestamp of workflow change &quot;not in house&quot; -&gt; &quot;in house&quot;" />
       <min value="0" />
       <max value="1" />
+      <base>
+        <path value="CTS_Transport.operations.update.receiptdate" />
+        <min value="0" />
+        <max value="1" />
+      </base>
       <type>
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
@@ -103,6 +148,11 @@
       <definition value="Indication if the changes to a trial form have been valiated by a trial monitoring team." />
       <min value="0" />
       <max value="1" />
+      <base>
+        <path value="CTS_Transport.operations.update.monitoringReviewed" />
+        <min value="0" />
+        <max value="1" />
+      </base>
       <type>
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
@@ -113,6 +163,11 @@
       <definition value="Indication if the changes to a trial form have been valiated by a medical review team." />
       <min value="0" />
       <max value="1" />
+      <base>
+        <path value="CTS_Transport.operations.update.medicalReviewed" />
+        <min value="0" />
+        <max value="1" />
+      </base>
       <type>
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
@@ -123,6 +178,11 @@
       <definition value="Indication if certain (medical) queries are open with regard to a items defined on the current trial form." />
       <min value="0" />
       <max value="1" />
+      <base>
+        <path value="CTS_Transport.operations.update.queries" />
+        <min value="0" />
+        <max value="1" />
+      </base>
       <type>
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
@@ -133,6 +193,11 @@
       <definition value="Structured data of all fields that were changed during the executed operation." />
       <min value="0" />
       <max value="*" />
+      <base>
+        <path value="CTS_Transport.operations.data" />
+        <min value="0" />
+        <max value="*" />
+      </base>
       <type>
         <code value="BackboneElement" />
       </type>
@@ -142,6 +207,11 @@
       <definition value="Index of the CRF block of the item that was changed during the operation." />
       <min value="0" />
       <max value="1" />
+      <base>
+        <path value="CTS_Transport.operations.data.blockindex" />
+        <min value="0" />
+        <max value="1" />
+      </base>
       <type>
         <code value="unsignedInt" />
         <profile value="http://hl7.org/fhir/StructureDefinition/unsignedInt" />
@@ -152,6 +222,11 @@
       <definition value="Index of the group of the item that was changed during the operation." />
       <min value="0" />
       <max value="1" />
+      <base>
+        <path value="CTS_Transport.operations.data.groupindex" />
+        <min value="0" />
+        <max value="1" />
+      </base>
       <type>
         <code value="unsignedInt" />
         <profile value="http://hl7.org/fhir/StructureDefinition/unsignedInt" />
@@ -162,6 +237,11 @@
       <definition value="Unique name of the item that was changed during the described operation." />
       <min value="1" />
       <max value="1" />
+      <base>
+        <path value="CTS_Transport.operations.data.itemid" />
+        <min value="1" />
+        <max value="1" />
+      </base>
       <type>
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
@@ -172,6 +252,11 @@
       <definition value="Metadata and the actual values of the CRF item that was changed during the described operation." />
       <min value="1" />
       <max value="1" />
+      <base>
+        <path value="CTS_Transport.operations.data.values" />
+        <min value="1" />
+        <max value="1" />
+      </base>
       <type>
         <code value="BackboneElement" />
       </type>
@@ -181,6 +266,11 @@
       <definition value="New value of the changed item (can be uniquely identified through its blockindex, groupindex and itemid)." />
       <min value="1" />
       <max value="*" />
+      <base>
+        <path value="CTS_Transport.operations.data.values.value" />
+        <min value="1" />
+        <max value="*" />
+      </base>
       <type>
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
@@ -191,6 +281,11 @@
       <definition value="Unit if value is a numerical value." />
       <min value="0" />
       <max value="1" />
+      <base>
+        <path value="CTS_Transport.operations.data.values.unit" />
+        <min value="0" />
+        <max value="1" />
+      </base>
       <type>
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
@@ -201,6 +296,11 @@
       <definition value="Certain item may specify a multiple / single choice list in a so-called catalog. Indicate if the user manually specified a value &quot;other&quot; than provided by the predefined list." />
       <min value="0" />
       <max value="1" />
+      <base>
+        <path value="CTS_Transport.operations.data.values.isother" />
+        <min value="0" />
+        <max value="1" />
+      </base>
       <type>
         <code value="boolean" />
         <profile value="http://hl7.org/fhir/StructureDefinition/boolean" />
@@ -211,6 +311,11 @@
       <definition value="Predefined value for an item." />
       <min value="0" />
       <max value="*" />
+      <base>
+        <path value="CTS_Transport.operations.data.values.predef" />
+        <min value="0" />
+        <max value="*" />
+      </base>
       <type>
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
@@ -221,6 +326,11 @@
       <definition value="Reason why an &quot;Edit Check&quot; in the CTS was overruled by a user." />
       <min value="0" />
       <max value="1" />
+      <base>
+        <path value="CTS_Transport.operations.data.values.overrule" />
+        <min value="0" />
+        <max value="1" />
+      </base>
       <type>
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
@@ -231,6 +341,11 @@
       <definition value="Unique id within one instance of the CTS_Transport instance.  Identifies a single operation." />
       <min value="1" />
       <max value="1" />
+      <base>
+        <path value="CTS_Transport.operations.operationId" />
+        <min value="1" />
+        <max value="1" />
+      </base>
       <type>
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
@@ -241,6 +356,11 @@
       <definition value="Type of executed operation." />
       <min value="1" />
       <max value="1" />
+      <base>
+        <path value="CTS_Transport.operations.type" />
+        <min value="1" />
+        <max value="1" />
+      </base>
       <type>
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
@@ -251,6 +371,11 @@
       <definition value="URL to ClinicalSite.org, used as an identifier for the user responsible for the operation." />
       <min value="1" />
       <max value="1" />
+      <base>
+        <path value="CTS_Transport.operations.editor" />
+        <min value="1" />
+        <max value="1" />
+      </base>
       <type>
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
@@ -261,6 +386,11 @@
       <definition value="Timestamp indicating when the operation was executed by the user within a trial form." />
       <min value="1" />
       <max value="1" />
+      <base>
+        <path value="CTS_Transport.operations.timestamp" />
+        <min value="1" />
+        <max value="1" />
+      </base>
       <type>
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
@@ -271,6 +401,11 @@
       <definition value="ID of the CRF page on which the operation was executed." />
       <min value="1" />
       <max value="1" />
+      <base>
+        <path value="CTS_Transport.operations.crfid" />
+        <min value="1" />
+        <max value="1" />
+      </base>
       <type>
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
