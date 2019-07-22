@@ -1413,7 +1413,7 @@
             "requirements": "no slicing on root",
             "severity": "error",
             "human": "No slicing on the root element",
-            "expression": "element.first().slicing.empty()",
+            "expression": "element.where(path.contains('.').not()).slicing.empty()",
             "xpath": "not(f:element[1]/f:slicing)"
           },
           {
@@ -2412,7 +2412,7 @@
             "requirements": "no slicing on root",
             "severity": "error",
             "human": "No slicing on the root element",
-            "expression": "element.first().slicing.empty()",
+            "expression": "element.where(path.contains('.').not()).slicing.empty()",
             "xpath": "not(f:element[1]/f:slicing)"
           },
           {
