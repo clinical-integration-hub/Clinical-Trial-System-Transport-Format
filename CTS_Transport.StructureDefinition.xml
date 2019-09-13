@@ -204,6 +204,15 @@
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
       </type>
     </element>
+    <element id="CTS_Transport.operations.data.repeatindex">
+      <path value="CTS_Transport.operations.data.repeatindex" />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="unsignedInt" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/unsignedInt" />
+      </type>
+    </element>
     <element id="CTS_Transport.operations.operationId">
       <path value="CTS_Transport.operations.operationId" />
       <min value="1" />
