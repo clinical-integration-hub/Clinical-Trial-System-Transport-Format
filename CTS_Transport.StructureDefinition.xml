@@ -13,6 +13,7 @@
   <snapshot>
     <element id="CTS_Transport">
       <path value="CTS_Transport" />
+      <short value="Base for all elements" />
       <definition value="CTS_Transport (root element)" />
       <min value="0" />
       <max value="*" />
@@ -24,10 +25,106 @@
       <type>
         <code value="Element" />
       </type>
+      <condition value="ele-1" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <expression value="hasValue() or (children().count() &gt; id.count())" />
+        <xpath value="@value|f:*|h:div" />
+        <source value="Element" />
+      </constraint>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
+    </element>
+    <element id="CTS_Transport.id">
+      <path value="CTS_Transport.id" />
+      <representation value="xmlAttr" />
+      <short value="Unique id for inter-element referencing" />
+      <definition value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Element.id" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code>
+          <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-json-type">
+            <valueString value="string" />
+          </extension>
+          <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-xml-type">
+            <valueString value="xsd:string" />
+          </extension>
+          <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-rdf-type">
+            <valueString value="xsd:string" />
+          </extension>
+        </code>
+      </type>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
+    </element>
+    <element id="CTS_Transport.extension">
+      <path value="CTS_Transport.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <description value="Extensions are always sliced by (at least) url" />
+        <rules value="open" />
+      </slicing>
+      <short value="Additional content defined by implementations" />
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." />
+      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." />
+      <alias value="extensions" />
+      <alias value="user content" />
+      <min value="0" />
+      <max value="*" />
+      <base>
+        <path value="Element.extension" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="Extension" />
+      </type>
+      <condition value="ele-1" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <expression value="hasValue() or (children().count() &gt; id.count())" />
+        <xpath value="@value|f:*|h:div" />
+        <source value="Element" />
+      </constraint>
+      <constraint>
+        <key value="ext-1" />
+        <severity value="error" />
+        <human value="Must have either extensions or value[x], not both" />
+        <expression value="extension.exists() != value.exists()" />
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" />
+        <source value="Extension" />
+      </constraint>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="N/A" />
+      </mapping>
     </element>
     <element id="CTS_Transport.version">
       <path value="CTS_Transport.version" />
+      <short value="Primitive Type string" />
       <definition value="Version of the CTS_Transport format." />
+      <comment value="Note that FHIR strings SHALL NOT exceed 1MB in size" />
       <min value="1" />
       <max value="1" />
       <base>
@@ -39,10 +136,25 @@
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
       </type>
+      <condition value="ele-1" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <expression value="hasValue() or (children().count() &gt; id.count())" />
+        <xpath value="@value|f:*|h:div" />
+        <source value="Element" />
+      </constraint>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
     </element>
     <element id="CTS_Transport.patid">
       <path value="CTS_Transport.patid" />
+      <short value="Primitive Type string" />
       <definition value="ID of the patient for which a certain trial form was entered into the CTS." />
+      <comment value="Note that FHIR strings SHALL NOT exceed 1MB in size" />
       <min value="1" />
       <max value="1" />
       <base>
@@ -54,10 +166,25 @@
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
       </type>
+      <condition value="ele-1" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <expression value="hasValue() or (children().count() &gt; id.count())" />
+        <xpath value="@value|f:*|h:div" />
+        <source value="Element" />
+      </constraint>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
     </element>
     <element id="CTS_Transport.sourcesystem">
       <path value="CTS_Transport.sourcesystem" />
+      <short value="Primitive Type string" />
       <definition value="URI identifing the source system. Freely definable in config.php, see &quot;APP_PUBLICURL&quot;" />
+      <comment value="Note that FHIR strings SHALL NOT exceed 1MB in size" />
       <min value="1" />
       <max value="1" />
       <base>
@@ -69,9 +196,23 @@
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
       </type>
+      <condition value="ele-1" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <expression value="hasValue() or (children().count() &gt; id.count())" />
+        <xpath value="@value|f:*|h:div" />
+        <source value="Element" />
+      </constraint>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
     </element>
     <element id="CTS_Transport.operations">
       <path value="CTS_Transport.operations" />
+      <short value="Base for elements defined inside a resource" />
       <definition value="All information regarding a single change (&quot;operation&quot;) that was executed by a user of the CTS within a single trial form." />
       <min value="1" />
       <max value="*" />
@@ -83,10 +224,154 @@
       <type>
         <code value="BackboneElement" />
       </type>
+      <condition value="ele-1" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <expression value="hasValue() or (children().count() &gt; id.count())" />
+        <xpath value="@value|f:*|h:div" />
+        <source value="Element" />
+      </constraint>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
+    </element>
+    <element id="CTS_Transport.operations.id">
+      <path value="CTS_Transport.operations.id" />
+      <representation value="xmlAttr" />
+      <short value="Unique id for inter-element referencing" />
+      <definition value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Element.id" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code>
+          <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-json-type">
+            <valueString value="string" />
+          </extension>
+          <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-xml-type">
+            <valueString value="xsd:string" />
+          </extension>
+          <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-rdf-type">
+            <valueString value="xsd:string" />
+          </extension>
+        </code>
+      </type>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
+    </element>
+    <element id="CTS_Transport.operations.extension">
+      <path value="CTS_Transport.operations.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <description value="Extensions are always sliced by (at least) url" />
+        <rules value="open" />
+      </slicing>
+      <short value="Additional content defined by implementations" />
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." />
+      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." />
+      <alias value="extensions" />
+      <alias value="user content" />
+      <min value="0" />
+      <max value="*" />
+      <base>
+        <path value="Element.extension" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="Extension" />
+      </type>
+      <condition value="ele-1" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <expression value="hasValue() or (children().count() &gt; id.count())" />
+        <xpath value="@value|f:*|h:div" />
+        <source value="Element" />
+      </constraint>
+      <constraint>
+        <key value="ext-1" />
+        <severity value="error" />
+        <human value="Must have either extensions or value[x], not both" />
+        <expression value="extension.exists() != value.exists()" />
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" />
+        <source value="Extension" />
+      </constraint>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="N/A" />
+      </mapping>
+    </element>
+    <element id="CTS_Transport.operations.modifierExtension">
+      <path value="CTS_Transport.operations.modifierExtension" />
+      <short value="Extensions that cannot be ignored even if unrecognized" />
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)." />
+      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." />
+      <requirements value="Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension)." />
+      <alias value="extensions" />
+      <alias value="user content" />
+      <alias value="modifiers" />
+      <min value="0" />
+      <max value="*" />
+      <base>
+        <path value="BackboneElement.modifierExtension" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="Extension" />
+      </type>
+      <condition value="ele-1" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <expression value="hasValue() or (children().count() &gt; id.count())" />
+        <xpath value="@value|f:*|h:div" />
+        <source value="Element" />
+      </constraint>
+      <constraint>
+        <key value="ext-1" />
+        <severity value="error" />
+        <human value="Must have either extensions or value[x], not both" />
+        <expression value="extension.exists() != value.exists()" />
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" />
+        <source value="Extension" />
+      </constraint>
+      <isModifier value="true" />
+      <isModifierReason value="Modifier extensions are expected to modify the meaning or interpretation of the element that contains them" />
+      <isSummary value="true" />
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="N/A" />
+      </mapping>
     </element>
     <element id="CTS_Transport.operations.oldstatus">
       <path value="CTS_Transport.operations.oldstatus" />
+      <short value="Primitive Type string" />
       <definition value="Workflow status before the operation was executed. May be used for plausibility checking of the (new) workflow status." />
+      <comment value="Note that FHIR strings SHALL NOT exceed 1MB in size" />
       <min value="0" />
       <max value="1" />
       <base>
@@ -98,10 +383,25 @@
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
       </type>
+      <condition value="ele-1" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <expression value="hasValue() or (children().count() &gt; id.count())" />
+        <xpath value="@value|f:*|h:div" />
+        <source value="Element" />
+      </constraint>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
     </element>
     <element id="CTS_Transport.operations.newstatus">
       <path value="CTS_Transport.operations.newstatus" />
+      <short value="Primitive Type string" />
       <definition value="Updated workflow status of the trial form." />
+      <comment value="Note that FHIR strings SHALL NOT exceed 1MB in size" />
       <min value="0" />
       <max value="1" />
       <base>
@@ -113,9 +413,23 @@
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
       </type>
+      <condition value="ele-1" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <expression value="hasValue() or (children().count() &gt; id.count())" />
+        <xpath value="@value|f:*|h:div" />
+        <source value="Element" />
+      </constraint>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
     </element>
     <element id="CTS_Transport.operations.update">
       <path value="CTS_Transport.operations.update" />
+      <short value="Base for elements defined inside a resource" />
       <definition value="Metadata concerning the executed operation (&quot;statechange&quot;)" />
       <min value="0" />
       <max value="1" />
@@ -127,10 +441,154 @@
       <type>
         <code value="BackboneElement" />
       </type>
+      <condition value="ele-1" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <expression value="hasValue() or (children().count() &gt; id.count())" />
+        <xpath value="@value|f:*|h:div" />
+        <source value="Element" />
+      </constraint>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
+    </element>
+    <element id="CTS_Transport.operations.update.id">
+      <path value="CTS_Transport.operations.update.id" />
+      <representation value="xmlAttr" />
+      <short value="Unique id for inter-element referencing" />
+      <definition value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Element.id" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code>
+          <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-json-type">
+            <valueString value="string" />
+          </extension>
+          <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-xml-type">
+            <valueString value="xsd:string" />
+          </extension>
+          <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-rdf-type">
+            <valueString value="xsd:string" />
+          </extension>
+        </code>
+      </type>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
+    </element>
+    <element id="CTS_Transport.operations.update.extension">
+      <path value="CTS_Transport.operations.update.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <description value="Extensions are always sliced by (at least) url" />
+        <rules value="open" />
+      </slicing>
+      <short value="Additional content defined by implementations" />
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." />
+      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." />
+      <alias value="extensions" />
+      <alias value="user content" />
+      <min value="0" />
+      <max value="*" />
+      <base>
+        <path value="Element.extension" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="Extension" />
+      </type>
+      <condition value="ele-1" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <expression value="hasValue() or (children().count() &gt; id.count())" />
+        <xpath value="@value|f:*|h:div" />
+        <source value="Element" />
+      </constraint>
+      <constraint>
+        <key value="ext-1" />
+        <severity value="error" />
+        <human value="Must have either extensions or value[x], not both" />
+        <expression value="extension.exists() != value.exists()" />
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" />
+        <source value="Extension" />
+      </constraint>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="N/A" />
+      </mapping>
+    </element>
+    <element id="CTS_Transport.operations.update.modifierExtension">
+      <path value="CTS_Transport.operations.update.modifierExtension" />
+      <short value="Extensions that cannot be ignored even if unrecognized" />
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)." />
+      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." />
+      <requirements value="Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension)." />
+      <alias value="extensions" />
+      <alias value="user content" />
+      <alias value="modifiers" />
+      <min value="0" />
+      <max value="*" />
+      <base>
+        <path value="BackboneElement.modifierExtension" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="Extension" />
+      </type>
+      <condition value="ele-1" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <expression value="hasValue() or (children().count() &gt; id.count())" />
+        <xpath value="@value|f:*|h:div" />
+        <source value="Element" />
+      </constraint>
+      <constraint>
+        <key value="ext-1" />
+        <severity value="error" />
+        <human value="Must have either extensions or value[x], not both" />
+        <expression value="extension.exists() != value.exists()" />
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" />
+        <source value="Extension" />
+      </constraint>
+      <isModifier value="true" />
+      <isModifierReason value="Modifier extensions are expected to modify the meaning or interpretation of the element that contains them" />
+      <isSummary value="true" />
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="N/A" />
+      </mapping>
     </element>
     <element id="CTS_Transport.operations.update.receiptdate">
       <path value="CTS_Transport.operations.update.receiptdate" />
+      <short value="Primitive Type string" />
       <definition value="Timestamp of workflow change &quot;not in house&quot; -&gt; &quot;in house&quot;" />
+      <comment value="Note that FHIR strings SHALL NOT exceed 1MB in size" />
       <min value="0" />
       <max value="1" />
       <base>
@@ -142,10 +600,25 @@
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
       </type>
+      <condition value="ele-1" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <expression value="hasValue() or (children().count() &gt; id.count())" />
+        <xpath value="@value|f:*|h:div" />
+        <source value="Element" />
+      </constraint>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
     </element>
     <element id="CTS_Transport.operations.update.monitoringReviewed">
       <path value="CTS_Transport.operations.update.monitoringReviewed" />
+      <short value="Primitive Type string" />
       <definition value="Indication if the changes to a trial form have been valiated by a trial monitoring team." />
+      <comment value="Note that FHIR strings SHALL NOT exceed 1MB in size" />
       <min value="0" />
       <max value="1" />
       <base>
@@ -157,10 +630,25 @@
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
       </type>
+      <condition value="ele-1" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <expression value="hasValue() or (children().count() &gt; id.count())" />
+        <xpath value="@value|f:*|h:div" />
+        <source value="Element" />
+      </constraint>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
     </element>
     <element id="CTS_Transport.operations.update.medicalReviewed">
       <path value="CTS_Transport.operations.update.medicalReviewed" />
+      <short value="Primitive Type string" />
       <definition value="Indication if the changes to a trial form have been valiated by a medical review team." />
+      <comment value="Note that FHIR strings SHALL NOT exceed 1MB in size" />
       <min value="0" />
       <max value="1" />
       <base>
@@ -172,10 +660,25 @@
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
       </type>
+      <condition value="ele-1" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <expression value="hasValue() or (children().count() &gt; id.count())" />
+        <xpath value="@value|f:*|h:div" />
+        <source value="Element" />
+      </constraint>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
     </element>
     <element id="CTS_Transport.operations.update.queries">
       <path value="CTS_Transport.operations.update.queries" />
+      <short value="Primitive Type string" />
       <definition value="Indication if certain (medical) queries are open with regard to a items defined on the current trial form." />
+      <comment value="Note that FHIR strings SHALL NOT exceed 1MB in size" />
       <min value="0" />
       <max value="1" />
       <base>
@@ -187,9 +690,23 @@
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
       </type>
+      <condition value="ele-1" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <expression value="hasValue() or (children().count() &gt; id.count())" />
+        <xpath value="@value|f:*|h:div" />
+        <source value="Element" />
+      </constraint>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
     </element>
     <element id="CTS_Transport.operations.data">
       <path value="CTS_Transport.operations.data" />
+      <short value="Base for elements defined inside a resource" />
       <definition value="Structured data of all fields that were changed during the executed operation." />
       <min value="0" />
       <max value="*" />
@@ -201,10 +718,154 @@
       <type>
         <code value="BackboneElement" />
       </type>
+      <condition value="ele-1" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <expression value="hasValue() or (children().count() &gt; id.count())" />
+        <xpath value="@value|f:*|h:div" />
+        <source value="Element" />
+      </constraint>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
+    </element>
+    <element id="CTS_Transport.operations.data.id">
+      <path value="CTS_Transport.operations.data.id" />
+      <representation value="xmlAttr" />
+      <short value="Unique id for inter-element referencing" />
+      <definition value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Element.id" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code>
+          <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-json-type">
+            <valueString value="string" />
+          </extension>
+          <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-xml-type">
+            <valueString value="xsd:string" />
+          </extension>
+          <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-rdf-type">
+            <valueString value="xsd:string" />
+          </extension>
+        </code>
+      </type>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
+    </element>
+    <element id="CTS_Transport.operations.data.extension">
+      <path value="CTS_Transport.operations.data.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <description value="Extensions are always sliced by (at least) url" />
+        <rules value="open" />
+      </slicing>
+      <short value="Additional content defined by implementations" />
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." />
+      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." />
+      <alias value="extensions" />
+      <alias value="user content" />
+      <min value="0" />
+      <max value="*" />
+      <base>
+        <path value="Element.extension" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="Extension" />
+      </type>
+      <condition value="ele-1" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <expression value="hasValue() or (children().count() &gt; id.count())" />
+        <xpath value="@value|f:*|h:div" />
+        <source value="Element" />
+      </constraint>
+      <constraint>
+        <key value="ext-1" />
+        <severity value="error" />
+        <human value="Must have either extensions or value[x], not both" />
+        <expression value="extension.exists() != value.exists()" />
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" />
+        <source value="Extension" />
+      </constraint>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="N/A" />
+      </mapping>
+    </element>
+    <element id="CTS_Transport.operations.data.modifierExtension">
+      <path value="CTS_Transport.operations.data.modifierExtension" />
+      <short value="Extensions that cannot be ignored even if unrecognized" />
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)." />
+      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." />
+      <requirements value="Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension)." />
+      <alias value="extensions" />
+      <alias value="user content" />
+      <alias value="modifiers" />
+      <min value="0" />
+      <max value="*" />
+      <base>
+        <path value="BackboneElement.modifierExtension" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="Extension" />
+      </type>
+      <condition value="ele-1" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <expression value="hasValue() or (children().count() &gt; id.count())" />
+        <xpath value="@value|f:*|h:div" />
+        <source value="Element" />
+      </constraint>
+      <constraint>
+        <key value="ext-1" />
+        <severity value="error" />
+        <human value="Must have either extensions or value[x], not both" />
+        <expression value="extension.exists() != value.exists()" />
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" />
+        <source value="Extension" />
+      </constraint>
+      <isModifier value="true" />
+      <isModifierReason value="Modifier extensions are expected to modify the meaning or interpretation of the element that contains them" />
+      <isSummary value="true" />
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="N/A" />
+      </mapping>
     </element>
     <element id="CTS_Transport.operations.data.blockindex">
       <path value="CTS_Transport.operations.data.blockindex" />
+      <short value="Primitive Type unsignedInt" />
       <definition value="Index of the CRF block of the item that was changed during the operation." />
+      <comment value="32 bit number; for values larger than this, use decimal" />
       <min value="0" />
       <max value="1" />
       <base>
@@ -216,10 +877,25 @@
         <code value="unsignedInt" />
         <profile value="http://hl7.org/fhir/StructureDefinition/unsignedInt" />
       </type>
+      <condition value="ele-1" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <expression value="hasValue() or (children().count() &gt; id.count())" />
+        <xpath value="@value|f:*|h:div" />
+        <source value="Element" />
+      </constraint>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
     </element>
     <element id="CTS_Transport.operations.data.groupindex">
       <path value="CTS_Transport.operations.data.groupindex" />
+      <short value="Primitive Type unsignedInt" />
       <definition value="Index of the group of the item that was changed during the operation." />
+      <comment value="32 bit number; for values larger than this, use decimal" />
       <min value="0" />
       <max value="1" />
       <base>
@@ -231,10 +907,25 @@
         <code value="unsignedInt" />
         <profile value="http://hl7.org/fhir/StructureDefinition/unsignedInt" />
       </type>
+      <condition value="ele-1" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <expression value="hasValue() or (children().count() &gt; id.count())" />
+        <xpath value="@value|f:*|h:div" />
+        <source value="Element" />
+      </constraint>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
     </element>
     <element id="CTS_Transport.operations.data.itemid">
       <path value="CTS_Transport.operations.data.itemid" />
+      <short value="Primitive Type string" />
       <definition value="Unique name of the item that was changed during the described operation." />
+      <comment value="Note that FHIR strings SHALL NOT exceed 1MB in size" />
       <min value="1" />
       <max value="1" />
       <base>
@@ -246,9 +937,23 @@
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
       </type>
+      <condition value="ele-1" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <expression value="hasValue() or (children().count() &gt; id.count())" />
+        <xpath value="@value|f:*|h:div" />
+        <source value="Element" />
+      </constraint>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
     </element>
     <element id="CTS_Transport.operations.data.values">
       <path value="CTS_Transport.operations.data.values" />
+      <short value="Base for elements defined inside a resource" />
       <definition value="Metadata and the actual values of the CRF item that was changed during the described operation." />
       <min value="1" />
       <max value="1" />
@@ -260,10 +965,154 @@
       <type>
         <code value="BackboneElement" />
       </type>
+      <condition value="ele-1" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <expression value="hasValue() or (children().count() &gt; id.count())" />
+        <xpath value="@value|f:*|h:div" />
+        <source value="Element" />
+      </constraint>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
+    </element>
+    <element id="CTS_Transport.operations.data.values.id">
+      <path value="CTS_Transport.operations.data.values.id" />
+      <representation value="xmlAttr" />
+      <short value="Unique id for inter-element referencing" />
+      <definition value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Element.id" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code>
+          <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-json-type">
+            <valueString value="string" />
+          </extension>
+          <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-xml-type">
+            <valueString value="xsd:string" />
+          </extension>
+          <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-rdf-type">
+            <valueString value="xsd:string" />
+          </extension>
+        </code>
+      </type>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
+    </element>
+    <element id="CTS_Transport.operations.data.values.extension">
+      <path value="CTS_Transport.operations.data.values.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <description value="Extensions are always sliced by (at least) url" />
+        <rules value="open" />
+      </slicing>
+      <short value="Additional content defined by implementations" />
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." />
+      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." />
+      <alias value="extensions" />
+      <alias value="user content" />
+      <min value="0" />
+      <max value="*" />
+      <base>
+        <path value="Element.extension" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="Extension" />
+      </type>
+      <condition value="ele-1" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <expression value="hasValue() or (children().count() &gt; id.count())" />
+        <xpath value="@value|f:*|h:div" />
+        <source value="Element" />
+      </constraint>
+      <constraint>
+        <key value="ext-1" />
+        <severity value="error" />
+        <human value="Must have either extensions or value[x], not both" />
+        <expression value="extension.exists() != value.exists()" />
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" />
+        <source value="Extension" />
+      </constraint>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="N/A" />
+      </mapping>
+    </element>
+    <element id="CTS_Transport.operations.data.values.modifierExtension">
+      <path value="CTS_Transport.operations.data.values.modifierExtension" />
+      <short value="Extensions that cannot be ignored even if unrecognized" />
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)." />
+      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." />
+      <requirements value="Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension)." />
+      <alias value="extensions" />
+      <alias value="user content" />
+      <alias value="modifiers" />
+      <min value="0" />
+      <max value="*" />
+      <base>
+        <path value="BackboneElement.modifierExtension" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="Extension" />
+      </type>
+      <condition value="ele-1" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <expression value="hasValue() or (children().count() &gt; id.count())" />
+        <xpath value="@value|f:*|h:div" />
+        <source value="Element" />
+      </constraint>
+      <constraint>
+        <key value="ext-1" />
+        <severity value="error" />
+        <human value="Must have either extensions or value[x], not both" />
+        <expression value="extension.exists() != value.exists()" />
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" />
+        <source value="Extension" />
+      </constraint>
+      <isModifier value="true" />
+      <isModifierReason value="Modifier extensions are expected to modify the meaning or interpretation of the element that contains them" />
+      <isSummary value="true" />
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="N/A" />
+      </mapping>
     </element>
     <element id="CTS_Transport.operations.data.values.value">
       <path value="CTS_Transport.operations.data.values.value" />
+      <short value="Primitive Type string" />
       <definition value="New value of the changed item (can be uniquely identified through its blockindex, groupindex and itemid)." />
+      <comment value="Note that FHIR strings SHALL NOT exceed 1MB in size" />
       <min value="1" />
       <max value="*" />
       <base>
@@ -275,10 +1124,25 @@
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
       </type>
+      <condition value="ele-1" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <expression value="hasValue() or (children().count() &gt; id.count())" />
+        <xpath value="@value|f:*|h:div" />
+        <source value="Element" />
+      </constraint>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
     </element>
     <element id="CTS_Transport.operations.data.values.unit">
       <path value="CTS_Transport.operations.data.values.unit" />
+      <short value="Primitive Type string" />
       <definition value="Unit if value is a numerical value." />
+      <comment value="Note that FHIR strings SHALL NOT exceed 1MB in size" />
       <min value="0" />
       <max value="1" />
       <base>
@@ -290,9 +1154,23 @@
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
       </type>
+      <condition value="ele-1" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <expression value="hasValue() or (children().count() &gt; id.count())" />
+        <xpath value="@value|f:*|h:div" />
+        <source value="Element" />
+      </constraint>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
     </element>
     <element id="CTS_Transport.operations.data.values.isother">
       <path value="CTS_Transport.operations.data.values.isother" />
+      <short value="Primitive Type boolean" />
       <definition value="Certain item may specify a multiple / single choice list in a so-called catalog. Indicate if the user manually specified a value &quot;other&quot; than provided by the predefined list." />
       <min value="0" />
       <max value="1" />
@@ -305,10 +1183,25 @@
         <code value="boolean" />
         <profile value="http://hl7.org/fhir/StructureDefinition/boolean" />
       </type>
+      <condition value="ele-1" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <expression value="hasValue() or (children().count() &gt; id.count())" />
+        <xpath value="@value|f:*|h:div" />
+        <source value="Element" />
+      </constraint>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
     </element>
     <element id="CTS_Transport.operations.data.values.predef">
       <path value="CTS_Transport.operations.data.values.predef" />
+      <short value="Primitive Type string" />
       <definition value="Predefined value for an item." />
+      <comment value="Note that FHIR strings SHALL NOT exceed 1MB in size" />
       <min value="0" />
       <max value="*" />
       <base>
@@ -320,10 +1213,25 @@
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
       </type>
+      <condition value="ele-1" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <expression value="hasValue() or (children().count() &gt; id.count())" />
+        <xpath value="@value|f:*|h:div" />
+        <source value="Element" />
+      </constraint>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
     </element>
     <element id="CTS_Transport.operations.data.values.overrule">
       <path value="CTS_Transport.operations.data.values.overrule" />
+      <short value="Primitive Type string" />
       <definition value="Reason why an &quot;Edit Check&quot; in the CTS was overruled by a user." />
+      <comment value="Note that FHIR strings SHALL NOT exceed 1MB in size" />
       <min value="0" />
       <max value="1" />
       <base>
@@ -335,10 +1243,55 @@
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
       </type>
+      <condition value="ele-1" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <expression value="hasValue() or (children().count() &gt; id.count())" />
+        <xpath value="@value|f:*|h:div" />
+        <source value="Element" />
+      </constraint>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
+    </element>
+    <element id="CTS_Transport.operations.data.repeatindex">
+      <path value="CTS_Transport.operations.data.repeatindex" />
+      <short value="Primitive Type unsignedInt" />
+      <definition value="An integer with a value that is not negative (e.g. &gt;= 0)" />
+      <comment value="32 bit number; for values larger than this, use decimal" />
+      <min value="0" />
+      <max value="*" />
+      <base>
+        <path value="CTS_Transport.operations.data.repeatindex" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="unsignedInt" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/unsignedInt" />
+      </type>
+      <condition value="ele-1" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <expression value="hasValue() or (children().count() &gt; id.count())" />
+        <xpath value="@value|f:*|h:div" />
+        <source value="Element" />
+      </constraint>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
     </element>
     <element id="CTS_Transport.operations.operationId">
       <path value="CTS_Transport.operations.operationId" />
+      <short value="Primitive Type string" />
       <definition value="Unique id within one instance of the CTS_Transport instance.  Identifies a single operation." />
+      <comment value="Note that FHIR strings SHALL NOT exceed 1MB in size" />
       <min value="1" />
       <max value="1" />
       <base>
@@ -350,10 +1303,25 @@
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
       </type>
+      <condition value="ele-1" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <expression value="hasValue() or (children().count() &gt; id.count())" />
+        <xpath value="@value|f:*|h:div" />
+        <source value="Element" />
+      </constraint>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
     </element>
     <element id="CTS_Transport.operations.type">
       <path value="CTS_Transport.operations.type" />
+      <short value="Primitive Type string" />
       <definition value="Type of executed operation." />
+      <comment value="Note that FHIR strings SHALL NOT exceed 1MB in size" />
       <min value="1" />
       <max value="1" />
       <base>
@@ -365,10 +1333,25 @@
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
       </type>
+      <condition value="ele-1" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <expression value="hasValue() or (children().count() &gt; id.count())" />
+        <xpath value="@value|f:*|h:div" />
+        <source value="Element" />
+      </constraint>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
     </element>
     <element id="CTS_Transport.operations.editor">
       <path value="CTS_Transport.operations.editor" />
+      <short value="Primitive Type string" />
       <definition value="URL to ClinicalSite.org, used as an identifier for the user responsible for the operation." />
+      <comment value="Note that FHIR strings SHALL NOT exceed 1MB in size" />
       <min value="1" />
       <max value="1" />
       <base>
@@ -380,10 +1363,25 @@
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
       </type>
+      <condition value="ele-1" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <expression value="hasValue() or (children().count() &gt; id.count())" />
+        <xpath value="@value|f:*|h:div" />
+        <source value="Element" />
+      </constraint>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
     </element>
     <element id="CTS_Transport.operations.timestamp">
       <path value="CTS_Transport.operations.timestamp" />
+      <short value="Primitive Type string" />
       <definition value="Timestamp indicating when the operation was executed by the user within a trial form." />
+      <comment value="Note that FHIR strings SHALL NOT exceed 1MB in size" />
       <min value="1" />
       <max value="1" />
       <base>
@@ -395,10 +1393,25 @@
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
       </type>
+      <condition value="ele-1" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <expression value="hasValue() or (children().count() &gt; id.count())" />
+        <xpath value="@value|f:*|h:div" />
+        <source value="Element" />
+      </constraint>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
     </element>
     <element id="CTS_Transport.operations.crfid">
       <path value="CTS_Transport.operations.crfid" />
+      <short value="Primitive Type string" />
       <definition value="ID of the CRF page on which the operation was executed." />
+      <comment value="Note that FHIR strings SHALL NOT exceed 1MB in size" />
       <min value="1" />
       <max value="1" />
       <base>
@@ -410,6 +1423,19 @@
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
       </type>
+      <condition value="ele-1" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <expression value="hasValue() or (children().count() &gt; id.count())" />
+        <xpath value="@value|f:*|h:div" />
+        <source value="Element" />
+      </constraint>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
     </element>
   </snapshot>
   <differential>
@@ -418,11 +1444,6 @@
       <definition value="CTS_Transport (root element)" />
       <min value="0" />
       <max value="*" />
-      <base>
-        <path value="CTS_Transport" />
-        <min value="0" />
-        <max value="*" />
-      </base>
       <type>
         <code value="Element" />
       </type>
@@ -432,11 +1453,6 @@
       <definition value="Version of the CTS_Transport format." />
       <min value="1" />
       <max value="1" />
-      <base>
-        <path value="CTS_Transport.version" />
-        <min value="1" />
-        <max value="1" />
-      </base>
       <type>
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
@@ -447,11 +1463,6 @@
       <definition value="ID of the patient for which a certain trial form was entered into the CTS." />
       <min value="1" />
       <max value="1" />
-      <base>
-        <path value="CTS_Transport.patid" />
-        <min value="1" />
-        <max value="1" />
-      </base>
       <type>
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
@@ -462,11 +1473,6 @@
       <definition value="URI identifing the source system. Freely definable in config.php, see &quot;APP_PUBLICURL&quot;" />
       <min value="1" />
       <max value="1" />
-      <base>
-        <path value="CTS_Transport.sourcesystem" />
-        <min value="1" />
-        <max value="1" />
-      </base>
       <type>
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
@@ -477,11 +1483,6 @@
       <definition value="All information regarding a single change (&quot;operation&quot;) that was executed by a user of the CTS within a single trial form." />
       <min value="1" />
       <max value="*" />
-      <base>
-        <path value="CTS_Transport.operations" />
-        <min value="1" />
-        <max value="*" />
-      </base>
       <type>
         <code value="BackboneElement" />
       </type>
@@ -491,11 +1492,6 @@
       <definition value="Workflow status before the operation was executed. May be used for plausibility checking of the (new) workflow status." />
       <min value="0" />
       <max value="1" />
-      <base>
-        <path value="CTS_Transport.operations.oldstatus" />
-        <min value="0" />
-        <max value="1" />
-      </base>
       <type>
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
@@ -506,11 +1502,6 @@
       <definition value="Updated workflow status of the trial form." />
       <min value="0" />
       <max value="1" />
-      <base>
-        <path value="CTS_Transport.operations.newstatus" />
-        <min value="0" />
-        <max value="1" />
-      </base>
       <type>
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
@@ -521,11 +1512,6 @@
       <definition value="Metadata concerning the executed operation (&quot;statechange&quot;)" />
       <min value="0" />
       <max value="1" />
-      <base>
-        <path value="CTS_Transport.operations.update" />
-        <min value="0" />
-        <max value="1" />
-      </base>
       <type>
         <code value="BackboneElement" />
       </type>
@@ -535,11 +1521,6 @@
       <definition value="Timestamp of workflow change &quot;not in house&quot; -&gt; &quot;in house&quot;" />
       <min value="0" />
       <max value="1" />
-      <base>
-        <path value="CTS_Transport.operations.update.receiptdate" />
-        <min value="0" />
-        <max value="1" />
-      </base>
       <type>
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
@@ -550,11 +1531,6 @@
       <definition value="Indication if the changes to a trial form have been valiated by a trial monitoring team." />
       <min value="0" />
       <max value="1" />
-      <base>
-        <path value="CTS_Transport.operations.update.monitoringReviewed" />
-        <min value="0" />
-        <max value="1" />
-      </base>
       <type>
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
@@ -565,11 +1541,6 @@
       <definition value="Indication if the changes to a trial form have been valiated by a medical review team." />
       <min value="0" />
       <max value="1" />
-      <base>
-        <path value="CTS_Transport.operations.update.medicalReviewed" />
-        <min value="0" />
-        <max value="1" />
-      </base>
       <type>
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
@@ -580,11 +1551,6 @@
       <definition value="Indication if certain (medical) queries are open with regard to a items defined on the current trial form." />
       <min value="0" />
       <max value="1" />
-      <base>
-        <path value="CTS_Transport.operations.update.queries" />
-        <min value="0" />
-        <max value="1" />
-      </base>
       <type>
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
@@ -595,11 +1561,6 @@
       <definition value="Structured data of all fields that were changed during the executed operation." />
       <min value="0" />
       <max value="*" />
-      <base>
-        <path value="CTS_Transport.operations.data" />
-        <min value="0" />
-        <max value="*" />
-      </base>
       <type>
         <code value="BackboneElement" />
       </type>
@@ -609,11 +1570,6 @@
       <definition value="Index of the CRF block of the item that was changed during the operation." />
       <min value="0" />
       <max value="1" />
-      <base>
-        <path value="CTS_Transport.operations.data.blockindex" />
-        <min value="0" />
-        <max value="1" />
-      </base>
       <type>
         <code value="unsignedInt" />
         <profile value="http://hl7.org/fhir/StructureDefinition/unsignedInt" />
@@ -624,11 +1580,6 @@
       <definition value="Index of the group of the item that was changed during the operation." />
       <min value="0" />
       <max value="1" />
-      <base>
-        <path value="CTS_Transport.operations.data.groupindex" />
-        <min value="0" />
-        <max value="1" />
-      </base>
       <type>
         <code value="unsignedInt" />
         <profile value="http://hl7.org/fhir/StructureDefinition/unsignedInt" />
@@ -639,11 +1590,6 @@
       <definition value="Unique name of the item that was changed during the described operation." />
       <min value="1" />
       <max value="1" />
-      <base>
-        <path value="CTS_Transport.operations.data.itemid" />
-        <min value="1" />
-        <max value="1" />
-      </base>
       <type>
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
@@ -654,11 +1600,6 @@
       <definition value="Metadata and the actual values of the CRF item that was changed during the described operation." />
       <min value="1" />
       <max value="1" />
-      <base>
-        <path value="CTS_Transport.operations.data.values" />
-        <min value="1" />
-        <max value="1" />
-      </base>
       <type>
         <code value="BackboneElement" />
       </type>
@@ -668,11 +1609,6 @@
       <definition value="New value of the changed item (can be uniquely identified through its blockindex, groupindex and itemid)." />
       <min value="1" />
       <max value="*" />
-      <base>
-        <path value="CTS_Transport.operations.data.values.value" />
-        <min value="1" />
-        <max value="*" />
-      </base>
       <type>
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
@@ -683,11 +1619,6 @@
       <definition value="Unit if value is a numerical value." />
       <min value="0" />
       <max value="1" />
-      <base>
-        <path value="CTS_Transport.operations.data.values.unit" />
-        <min value="0" />
-        <max value="1" />
-      </base>
       <type>
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
@@ -698,11 +1629,6 @@
       <definition value="Certain item may specify a multiple / single choice list in a so-called catalog. Indicate if the user manually specified a value &quot;other&quot; than provided by the predefined list." />
       <min value="0" />
       <max value="1" />
-      <base>
-        <path value="CTS_Transport.operations.data.values.isother" />
-        <min value="0" />
-        <max value="1" />
-      </base>
       <type>
         <code value="boolean" />
         <profile value="http://hl7.org/fhir/StructureDefinition/boolean" />
@@ -713,11 +1639,6 @@
       <definition value="Predefined value for an item." />
       <min value="0" />
       <max value="*" />
-      <base>
-        <path value="CTS_Transport.operations.data.values.predef" />
-        <min value="0" />
-        <max value="*" />
-      </base>
       <type>
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
@@ -728,14 +1649,18 @@
       <definition value="Reason why an &quot;Edit Check&quot; in the CTS was overruled by a user." />
       <min value="0" />
       <max value="1" />
-      <base>
-        <path value="CTS_Transport.operations.data.values.overrule" />
-        <min value="0" />
-        <max value="1" />
-      </base>
       <type>
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="CTS_Transport.operations.data.repeatindex">
+      <path value="CTS_Transport.operations.data.repeatindex" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="unsignedInt" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/unsignedInt" />
       </type>
     </element>
     <element id="CTS_Transport.operations.operationId">
@@ -743,11 +1668,6 @@
       <definition value="Unique id within one instance of the CTS_Transport instance.  Identifies a single operation." />
       <min value="1" />
       <max value="1" />
-      <base>
-        <path value="CTS_Transport.operations.operationId" />
-        <min value="1" />
-        <max value="1" />
-      </base>
       <type>
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
@@ -758,11 +1678,6 @@
       <definition value="Type of executed operation." />
       <min value="1" />
       <max value="1" />
-      <base>
-        <path value="CTS_Transport.operations.type" />
-        <min value="1" />
-        <max value="1" />
-      </base>
       <type>
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
@@ -773,11 +1688,6 @@
       <definition value="URL to ClinicalSite.org, used as an identifier for the user responsible for the operation." />
       <min value="1" />
       <max value="1" />
-      <base>
-        <path value="CTS_Transport.operations.editor" />
-        <min value="1" />
-        <max value="1" />
-      </base>
       <type>
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
@@ -788,11 +1698,6 @@
       <definition value="Timestamp indicating when the operation was executed by the user within a trial form." />
       <min value="1" />
       <max value="1" />
-      <base>
-        <path value="CTS_Transport.operations.timestamp" />
-        <min value="1" />
-        <max value="1" />
-      </base>
       <type>
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
@@ -803,11 +1708,6 @@
       <definition value="ID of the CRF page on which the operation was executed." />
       <min value="1" />
       <max value="1" />
-      <base>
-        <path value="CTS_Transport.operations.crfid" />
-        <min value="1" />
-        <max value="1" />
-      </base>
       <type>
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
