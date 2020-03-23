@@ -1,0 +1,344 @@
+{
+    "resourceType": "StructureDefinition",
+    "id": "CTS-Transport",
+    "url": "http://hl7.org/fhir/StructureDefinition/CTS-Transport",
+    "version": "0.1.0",
+    "name": "CTS_Transport",
+    "status": "active",
+    "fhirVersion": "3.0.2",
+    "kind": "resource",
+    "abstract": false,
+    "type": "CTS_Transport",
+    "baseDefinition": "http://hl7.org/fhir/StructureDefinition/DomainResource",
+    "derivation": "specialization",
+    "differential": {
+        "element": [
+            {
+                "id": "CTS_Transport",
+                "path": "CTS_Transport",
+                "min": 0,
+                "max": "*"
+            },
+            {
+                "id": "CTS_Transport.version",
+                "path": "CTS_Transport.version",
+                "min": 1,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "string",
+                        "profile": "http://hl7.org/fhir/StructureDefinition/string"
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.patid",
+                "path": "CTS_Transport.patid",
+                "min": 1,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "string",
+                        "profile": "http://hl7.org/fhir/StructureDefinition/string"
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.sourcesystem",
+                "path": "CTS_Transport.sourcesystem",
+                "min": 1,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "string",
+                        "profile": "http://hl7.org/fhir/StructureDefinition/string"
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations",
+                "path": "CTS_Transport.operations",
+                "min": 1,
+                "max": "*",
+                "type": [
+                    {
+                        "code": "BackboneElement"
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations.oldstatus",
+                "path": "CTS_Transport.operations.oldstatus",
+                "min": 0,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "string",
+                        "profile": "http://hl7.org/fhir/StructureDefinition/string"
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations.newstatus",
+                "path": "CTS_Transport.operations.newstatus",
+                "min": 0,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "string",
+                        "profile": "http://hl7.org/fhir/StructureDefinition/string"
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations.update",
+                "path": "CTS_Transport.operations.update",
+                "min": 0,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "BackboneElement"
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations.update.receiptdate",
+                "path": "CTS_Transport.operations.update.receiptdate",
+                "min": 0,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "string",
+                        "profile": "http://hl7.org/fhir/StructureDefinition/string"
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations.update.monitoringReviewed",
+                "path": "CTS_Transport.operations.update.monitoringReviewed",
+                "min": 0,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "string",
+                        "profile": "http://hl7.org/fhir/StructureDefinition/string"
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations.update.medicalReviewed",
+                "path": "CTS_Transport.operations.update.medicalReviewed",
+                "min": 0,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "string",
+                        "profile": "http://hl7.org/fhir/StructureDefinition/string"
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations.update.queries",
+                "path": "CTS_Transport.operations.update.queries",
+                "min": 0,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "string",
+                        "profile": "http://hl7.org/fhir/StructureDefinition/string"
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations.data",
+                "path": "CTS_Transport.operations.data",
+                "min": 0,
+                "max": "*",
+                "type": [
+                    {
+                        "code": "BackboneElement"
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations.data.blockindex",
+                "path": "CTS_Transport.operations.data.blockindex",
+                "min": 0,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "unsignedInt",
+                        "profile": "http://hl7.org/fhir/StructureDefinition/unsignedInt"
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations.data.groupindex",
+                "path": "CTS_Transport.operations.data.groupindex",
+                "min": 0,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "unsignedInt",
+                        "profile": "http://hl7.org/fhir/StructureDefinition/unsignedInt"
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations.data.itemid",
+                "path": "CTS_Transport.operations.data.itemid",
+                "min": 1,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "string",
+                        "profile": "http://hl7.org/fhir/StructureDefinition/string"
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations.data.values",
+                "path": "CTS_Transport.operations.data.values",
+                "min": 1,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "BackboneElement"
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations.data.values.value",
+                "path": "CTS_Transport.operations.data.values.value",
+                "min": 1,
+                "max": "*",
+                "type": [
+                    {
+                        "code": "string",
+                        "profile": "http://hl7.org/fhir/StructureDefinition/string"
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations.data.values.unit",
+                "path": "CTS_Transport.operations.data.values.unit",
+                "min": 0,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "string",
+                        "profile": "http://hl7.org/fhir/StructureDefinition/string"
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations.data.values.isother",
+                "path": "CTS_Transport.operations.data.values.isother",
+                "min": 0,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "boolean",
+                        "profile": "http://hl7.org/fhir/StructureDefinition/boolean"
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations.data.values.predef",
+                "path": "CTS_Transport.operations.data.values.predef",
+                "min": 0,
+                "max": "*",
+                "type": [
+                    {
+                        "code": "string",
+                        "profile": "http://hl7.org/fhir/StructureDefinition/string"
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations.data.values.overrule",
+                "path": "CTS_Transport.operations.data.values.overrule",
+                "min": 0,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "string",
+                        "profile": "http://hl7.org/fhir/StructureDefinition/string"
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations.data.repeatindex",
+                "path": "CTS_Transport.operations.data.repeatindex",
+                "min": 0,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "unsignedInt",
+                        "profile": "http://hl7.org/fhir/StructureDefinition/unsignedInt"
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations.operationId",
+                "path": "CTS_Transport.operations.operationId",
+                "min": 1,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "string",
+                        "profile": "http://hl7.org/fhir/StructureDefinition/string"
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations.type",
+                "path": "CTS_Transport.operations.type",
+                "min": 1,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "string",
+                        "profile": "http://hl7.org/fhir/StructureDefinition/string"
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations.editor",
+                "path": "CTS_Transport.operations.editor",
+                "min": 1,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "string",
+                        "profile": "http://hl7.org/fhir/StructureDefinition/string"
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations.timestamp",
+                "path": "CTS_Transport.operations.timestamp",
+                "min": 1,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "string",
+                        "profile": "http://hl7.org/fhir/StructureDefinition/string"
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations.crfid",
+                "path": "CTS_Transport.operations.crfid",
+                "min": 1,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "string",
+                        "profile": "http://hl7.org/fhir/StructureDefinition/string"
+                    }
+                ]
+            }
+        ]
+    }
+}
