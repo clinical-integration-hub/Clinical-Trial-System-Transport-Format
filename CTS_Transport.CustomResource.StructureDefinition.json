@@ -1,0 +1,417 @@
+{
+    "resourceType": "StructureDefinition",
+    "id": "CTS-Transport-R4",
+    "url": "http://uk-koeln.de/fhir/StructureDefinition/CTS-Transport-R4",
+    "version": "0.1.0",
+    "name": "CTS_Transport",
+    "status": "active",
+    "fhirVersion": "4.0.0",
+    "kind": "resource",
+    "abstract": false,
+    "type": "CTS_Transport",
+    "baseDefinition": "http://hl7.org/fhir/StructureDefinition/DomainResource",
+    "derivation": "specialization",
+    "differential": {
+        "element": [
+            {
+                "id": "CTS_Transport",
+                "path": "CTS_Transport",
+                "definition": "CTS_Transport (root element)",
+                "min": 0,
+                "max": "*"
+            },
+            {
+                "id": "CTS_Transport.version",
+                "path": "CTS_Transport.version",
+                "definition": "Version of the CTS_Transport format.",
+                "min": 1,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "string",
+                        "profile": [
+                            "http://hl7.org/fhir/StructureDefinition/string"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.patid",
+                "path": "CTS_Transport.patid",
+                "definition": "ID of the patient for which a certain trial form was entered into the CTS.",
+                "min": 1,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "string",
+                        "profile": [
+                            "http://hl7.org/fhir/StructureDefinition/string"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.sourcesystem",
+                "path": "CTS_Transport.sourcesystem",
+                "definition": "URI identifing the source system. Freely definable in config.php, see \"APP_PUBLICURL\"",
+                "min": 1,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "string",
+                        "profile": [
+                            "http://hl7.org/fhir/StructureDefinition/string"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations",
+                "path": "CTS_Transport.operations",
+                "definition": "All information regarding a single change (\"operation\") that was executed by a user of the CTS within a single trial form.",
+                "min": 1,
+                "max": "*",
+                "type": [
+                    {
+                        "code": "BackboneElement"
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations.oldstatus",
+                "path": "CTS_Transport.operations.oldstatus",
+                "definition": "Workflow status before the operation was executed. May be used for plausibility checking of the (new) workflow status.",
+                "min": 0,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "string",
+                        "profile": [
+                            "http://hl7.org/fhir/StructureDefinition/string"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations.newstatus",
+                "path": "CTS_Transport.operations.newstatus",
+                "definition": "Updated workflow status of the trial form.",
+                "min": 0,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "string",
+                        "profile": [
+                            "http://hl7.org/fhir/StructureDefinition/string"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations.update",
+                "path": "CTS_Transport.operations.update",
+                "definition": "Metadata concerning the executed operation (\"statechange\")",
+                "min": 0,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "BackboneElement"
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations.update.receiptdate",
+                "path": "CTS_Transport.operations.update.receiptdate",
+                "definition": "Timestamp of workflow change \"not in house\" -> \"in house\"",
+                "min": 0,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "string",
+                        "profile": [
+                            "http://hl7.org/fhir/StructureDefinition/string"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations.update.monitoringReviewed",
+                "path": "CTS_Transport.operations.update.monitoringReviewed",
+                "definition": "Indication if the changes to a trial form have been valiated by a trial monitoring team.",
+                "min": 0,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "string",
+                        "profile": [
+                            "http://hl7.org/fhir/StructureDefinition/string"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations.update.medicalReviewed",
+                "path": "CTS_Transport.operations.update.medicalReviewed",
+                "definition": "Indication if the changes to a trial form have been valiated by a medical review team.",
+                "min": 0,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "string",
+                        "profile": [
+                            "http://hl7.org/fhir/StructureDefinition/string"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations.update.queries",
+                "path": "CTS_Transport.operations.update.queries",
+                "definition": "Indication if certain (medical) queries are open with regard to a items defined on the current trial form.",
+                "min": 0,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "string",
+                        "profile": [
+                            "http://hl7.org/fhir/StructureDefinition/string"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations.data",
+                "path": "CTS_Transport.operations.data",
+                "definition": "Structured data of all fields that were changed during the executed operation.",
+                "min": 0,
+                "max": "*",
+                "type": [
+                    {
+                        "code": "BackboneElement"
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations.data.blockindex",
+                "path": "CTS_Transport.operations.data.blockindex",
+                "definition": "Index of the CRF block of the item that was changed during the operation.",
+                "min": 0,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "unsignedInt",
+                        "profile": [
+                            "http://hl7.org/fhir/StructureDefinition/unsignedInt"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations.data.groupindex",
+                "path": "CTS_Transport.operations.data.groupindex",
+                "definition": "Index of the group of the item that was changed during the operation.",
+                "min": 0,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "unsignedInt",
+                        "profile": [
+                            "http://hl7.org/fhir/StructureDefinition/unsignedInt"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations.data.itemid",
+                "path": "CTS_Transport.operations.data.itemid",
+                "definition": "Unique name of the item that was changed during the described operation.",
+                "min": 1,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "string",
+                        "profile": [
+                            "http://hl7.org/fhir/StructureDefinition/string"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations.data.values",
+                "path": "CTS_Transport.operations.data.values",
+                "definition": "Metadata and the actual values of the CRF item that was changed during the described operation.",
+                "min": 1,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "BackboneElement"
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations.data.values.value",
+                "path": "CTS_Transport.operations.data.values.value",
+                "definition": "New value of the changed item (can be uniquely identified through its blockindex, groupindex and itemid).",
+                "min": 1,
+                "max": "*",
+                "type": [
+                    {
+                        "code": "string",
+                        "profile": [
+                            "http://hl7.org/fhir/StructureDefinition/string"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations.data.values.unit",
+                "path": "CTS_Transport.operations.data.values.unit",
+                "definition": "Unit if value is a numerical value.",
+                "min": 0,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "string",
+                        "profile": [
+                            "http://hl7.org/fhir/StructureDefinition/string"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations.data.values.isother",
+                "path": "CTS_Transport.operations.data.values.isother",
+                "definition": "Certain item may specify a multiple / single choice list in a so-called catalog. Indicate if the user manually specified a value \"other\" than provided by the predefined list.",
+                "min": 0,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "boolean",
+                        "profile": [
+                            "http://hl7.org/fhir/StructureDefinition/boolean"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations.data.values.predef",
+                "path": "CTS_Transport.operations.data.values.predef",
+                "definition": "Predefined value for an item.",
+                "min": 0,
+                "max": "*",
+                "type": [
+                    {
+                        "code": "string",
+                        "profile": [
+                            "http://hl7.org/fhir/StructureDefinition/string"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations.data.values.overrule",
+                "path": "CTS_Transport.operations.data.values.overrule",
+                "definition": "Reason why an \"Edit Check\" in the CTS was overruled by a user.",
+                "min": 0,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "string",
+                        "profile": [
+                            "http://hl7.org/fhir/StructureDefinition/string"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations.data.repeatindex",
+                "path": "CTS_Transport.operations.data.repeatindex",
+                "min": 0,
+                "max": "*",
+                "type": [
+                    {
+                        "code": "unsignedInt",
+                        "profile": [
+                            "http://hl7.org/fhir/StructureDefinition/unsignedInt"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations.operationId",
+                "path": "CTS_Transport.operations.operationId",
+                "definition": "Unique id within one instance of the CTS_Transport instance.  Identifies a single operation.",
+                "min": 1,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "string",
+                        "profile": [
+                            "http://hl7.org/fhir/StructureDefinition/string"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations.type",
+                "path": "CTS_Transport.operations.type",
+                "definition": "Type of executed operation.",
+                "min": 1,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "string",
+                        "profile": [
+                            "http://hl7.org/fhir/StructureDefinition/string"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations.editor",
+                "path": "CTS_Transport.operations.editor",
+                "definition": "URL to ClinicalSite.org, used as an identifier for the user responsible for the operation.",
+                "min": 1,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "string",
+                        "profile": [
+                            "http://hl7.org/fhir/StructureDefinition/string"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations.timestamp",
+                "path": "CTS_Transport.operations.timestamp",
+                "definition": "Timestamp indicating when the operation was executed by the user within a trial form.",
+                "min": 1,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "string",
+                        "profile": [
+                            "http://hl7.org/fhir/StructureDefinition/string"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.operations.crfid",
+                "path": "CTS_Transport.operations.crfid",
+                "definition": "ID of the CRF page on which the operation was executed.",
+                "min": 1,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "string",
+                        "profile": [
+                            "http://hl7.org/fhir/StructureDefinition/string"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
