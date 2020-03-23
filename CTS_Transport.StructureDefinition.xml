@@ -4,7 +4,7 @@
   <version value="0.1.0" />
   <name value="CTS_Transport" />
   <status value="active" />
-  <fhirVersion value="3.0.1" />
+  <fhirVersion value="3.0.2" />
   <kind value="logical" />
   <abstract value="false" />
   <type value="CTS_Transport" />
