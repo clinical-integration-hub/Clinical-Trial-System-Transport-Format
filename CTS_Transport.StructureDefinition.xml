@@ -4,7 +4,7 @@
   <version value="0.1.0" />
   <name value="CTS_Transport" />
   <status value="active" />
-  <fhirVersion value="4.0.0" />
+  <fhirVersion value="4.0.1" />
   <kind value="logical" />
   <abstract value="false" />
   <type value="http://uk-koeln.de/fhir/StructureDefinition/CTS_Transport" />
