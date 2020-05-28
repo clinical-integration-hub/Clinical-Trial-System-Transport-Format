@@ -1,11 +1,10 @@
 {
     "resourceType": "StructureDefinition",
     "id": "CTS-Transport-R4",
-    "url": "http://uk-koeln.de/fhir/StructureDefinition/CTS-Transport-R4",
+    "url": "http://hl7.org/fhir/StructureDefinition/CTS-Transport-R4",
     "version": "0.1.0",
     "name": "CTS_Transport",
     "status": "active",
-    "fhirVersion": "4.0.1",
     "kind": "resource",
     "abstract": false,
     "type": "CTS_Transport",
@@ -241,7 +240,7 @@
                 "path": "CTS_Transport.operations.data.values",
                 "definition": "Metadata and the actual values of the CRF item that was changed during the described operation.",
                 "min": 1,
-                "max": "1",
+                "max": "*",
                 "type": [
                     {
                         "code": "BackboneElement"
@@ -253,7 +252,7 @@
                 "path": "CTS_Transport.operations.data.values.value",
                 "definition": "New value of the changed item (can be uniquely identified through its blockindex, groupindex and itemid).",
                 "min": 1,
-                "max": "*",
+                "max": "1",
                 "type": [
                     {
                         "code": "string",
