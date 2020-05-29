@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <url value="http://uk-koeln.de/fhir/StructureDefinition/CTS_Transport" />
+  <url value="http://hl7.org/fhir/StructureDefinition/CTS-Transport" />
   <version value="0.1.0" />
   <name value="CTS_Transport" />
   <status value="active" />
@@ -171,7 +171,7 @@
       <path value="CTS_Transport.operations.data.values" />
       <definition value="Metadata and the actual values of the CRF item that was changed during the described operation." />
       <min value="1" />
-      <max value="1" />
+      <max value="*" />
       <type>
         <code value="BackboneElement" />
       </type>
@@ -180,7 +180,7 @@
       <path value="CTS_Transport.operations.data.values.value" />
       <definition value="New value of the changed item (can be uniquely identified through its blockindex, groupindex and itemid)." />
       <min value="1" />
-      <max value="*" />
+      <max value="1" />
       <type>
         <code value="string" />
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
