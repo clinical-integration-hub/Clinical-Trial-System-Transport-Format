@@ -36,6 +36,48 @@
                 ]
             },
             {
+                "id": "CTS_Transport.metaInformation",
+                "path": "CTS_Transport.metaInformation",
+                "definition": "Key Value Pairs for meta informations.",
+                "min": 0,
+                "max": "*",
+                "type": [
+                    {
+                        "code": "BackboneElement"
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.metaInformation.key",
+                "path": "CTS_Transport.metaInformation.key",
+                "definition": "The key for this metainformation.",
+                "min": 1,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "string",
+                        "profile": [
+                            "http://hl7.org/fhir/StructureDefinition/string"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "CTS_Transport.metaInformation.value",
+                "path": "CTS_Transport.metaInformation.value",
+                "definition": "The value of this metainformation.",
+                "min": 1,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "string",
+                        "profile": [
+                            "http://hl7.org/fhir/StructureDefinition/string"
+                        ]
+                    }
+                ]
+            },
+            {
                 "id": "CTS_Transport.patid",
                 "path": "CTS_Transport.patid",
                 "definition": "ID of the patient for which a certain trial form was entered into the CTS.",

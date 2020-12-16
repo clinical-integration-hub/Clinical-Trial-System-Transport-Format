@@ -30,6 +30,35 @@
         <profile value="http://hl7.org/fhir/StructureDefinition/string" />
       </type>
     </element>
+    <element id="CTS_Transport.metaInformation">
+      <path value="CTS_Transport.metaInformation" />
+      <short value="Key Value Pairs for meta informations." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="CTS_Transport.metaInformation.key">
+      <path value="CTS_Transport.metaInformation.key" />
+      <short value="The key for this metainformation." />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="CTS_Transport.metaInformation.value">
+      <path value="CTS_Transport.metaInformation.value" />
+      <short value="The value of this metainformation." />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
     <element id="CTS_Transport.patid">
       <path value="CTS_Transport.patid" />
       <definition value="ID of the patient for which a certain trial form was entered into the CTS." />
