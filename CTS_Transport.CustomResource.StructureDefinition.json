@@ -369,7 +369,7 @@
                 "id": "CTS_Transport.operations.data.repeatindex",
                 "path": "CTS_Transport.operations.data.repeatindex",
                 "min": 0,
-                "max": "*",
+                "max": "1",
                 "type": [
                     {
                         "code": "unsignedInt",
