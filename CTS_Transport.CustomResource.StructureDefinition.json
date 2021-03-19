@@ -96,7 +96,7 @@
                 "id": "CTS_Transport.sourcesystem",
                 "path": "CTS_Transport.sourcesystem",
                 "definition": "URI identifing the source system. Freely definable in config.php, see \"APP_PUBLICURL\"",
-                "min": 1,
+                "min": 0,
                 "max": "1",
                 "type": [
                     {
