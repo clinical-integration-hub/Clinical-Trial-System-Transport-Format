@@ -72,7 +72,7 @@
     <element id="CTS_Transport.sourcesystem">
       <path value="CTS_Transport.sourcesystem" />
       <definition value="URI identifing the source system. Freely definable in config.php, see &quot;APP_PUBLICURL&quot;" />
-      <min value="1" />
+      <min value="0" />
       <max value="1" />
       <type>
         <code value="string" />
